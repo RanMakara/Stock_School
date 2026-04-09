@@ -1,0 +1,49 @@
+/* Global base styles and print helpers */
+html, body, #root {
+  min-height: 100%;
+}
+
+body {
+  background: #f8fafc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(37, 99, 235, 0.18);
+}
+
+.print-only {
+  display: none;
+}
+
+@media print {
+  body {
+    background: #fff !important;
+  }
+
+  .no-print,
+  .sidebar,
+  .navbar,
+  .footer,
+  .print-hide {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .print-page {
+    padding: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  a[href]:after {
+    content: "";
+  }
+}
